@@ -1,0 +1,6 @@
+INDEX VERSION 1.134+C:\FileBasedToDoList\.metadata\.plugins\org.eclipse.jdt.core
+4167350210.index
+1067094681.index
+1613859384.index
+1865797976.index
+3726647163.index
