@@ -18,9 +18,10 @@ public class DataManager {
 	
     public void loadData() {
         allTasks.clear();
+        maxId = 0;
 
     	try {
-            File file = new File(System.getProperty("user.dir") + File.separator + "FileBasedToDoList" + File.separator + "taskManager" + File.separator + "taskObjects.txt");
+            File file = new File("C:\\FileBasedToDoList\\taskManager\\taskObjects.txt");
             if(!file.exists()) {
             	file.createNewFile();
                 System.out.println("No existing task data found, new file created.");
@@ -34,7 +35,11 @@ public class DataManager {
 	                try {
 	                    Task task = (Task) objectIn.readObject();
 	                    allTasks.add(task);
-	                   
+	
+	                    for(int i = 0 ; i > allTasks.size();) {
+	                    	i++;
+	                    }
+	                    
 	                } catch (EOFException e) {
 	                    break; 
 	                } catch (ClassNotFoundException e) {
@@ -55,8 +60,7 @@ public class DataManager {
 	public void storeData() {
 		
 		try {
-			File file = new File(System.getProperty("user.dir") + File.separator + "FileBasedToDoList" + File.separator + "taskManager" + File.separator + "taskObjects.txt");
-			file.getParentFile().mkdirs();
+			File file = new File("C:\\FileBasedToDoList\\taskManager\\taskObjects.txt");
 			FileOutputStream fileOut = new FileOutputStream(file);
 			
 			try(ObjectOutputStream objectOut = new ObjectOutputStream(fileOut)){

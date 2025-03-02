@@ -56,7 +56,6 @@ public class DataManager {
 		
 		try {
 			File file = new File(System.getProperty("user.dir") + File.separator + "FileBasedToDoList" + File.separator + "taskManager" + File.separator + "taskObjects.txt");
-			file.getParentFile().mkdirs();
 			FileOutputStream fileOut = new FileOutputStream(file);
 			
 			try(ObjectOutputStream objectOut = new ObjectOutputStream(fileOut)){

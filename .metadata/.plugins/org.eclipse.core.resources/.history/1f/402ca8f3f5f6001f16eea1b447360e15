@@ -20,7 +20,7 @@ public class DataManager {
         allTasks.clear();
 
     	try {
-            File file = new File(System.getProperty("user.dir") + File.separator + "FileBasedToDoList" + File.separator + "taskManager" + File.separator + "taskObjects.txt");
+            File file = new File("taskManager\\taskObjects.txt");
             if(!file.exists()) {
             	file.createNewFile();
                 System.out.println("No existing task data found, new file created.");
@@ -55,8 +55,7 @@ public class DataManager {
 	public void storeData() {
 		
 		try {
-			File file = new File(System.getProperty("user.dir") + File.separator + "FileBasedToDoList" + File.separator + "taskManager" + File.separator + "taskObjects.txt");
-			file.getParentFile().mkdirs();
+			File file = new File("taskManager\\taskObjects.txt");
 			FileOutputStream fileOut = new FileOutputStream(file);
 			
 			try(ObjectOutputStream objectOut = new ObjectOutputStream(fileOut)){
